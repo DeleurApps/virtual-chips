@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A9D2AFF26DE90733479951E /* Pods_VirtualChips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04B70CAB8BEC9CB4B12A5DA /* Pods_VirtualChips.framework */; };
 		26BD5975F51502DD2F575FF8 /* Pods_VirtualChipsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706028ECBB2DE4DA36789FC6 /* Pods_VirtualChipsTests.framework */; };
-		F629E6601FC265BE00597489 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F629E65F1FC265BE00597489 /* Game.swift */; };
+		F629E6601FC265BE00597489 /* VirtualChips.xcworkspace in Sources */ = {isa = PBXBuildFile; fileRef = F629E65F1FC265BE00597489 /* VirtualChips.xcworkspace */; };
 		F629E6621FC2660E00597489 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F629E6611FC2660E00597489 /* Player.swift */; };
 		F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F46D1FBA8C6A00CC0673 /* AppDelegate.swift */; };
 		F630F4751FBA8C6A00CC0673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F630F4741FBA8C6A00CC0673 /* Assets.xcassets */; };
@@ -47,7 +47,7 @@
 		A47100D02A5BD0F161A12AEE /* Pods-VirtualChipsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualChipsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualChipsTests/Pods-VirtualChipsTests.release.xcconfig"; sourceTree = "<group>"; };
 		D04B70CAB8BEC9CB4B12A5DA /* Pods_VirtualChips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualChips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59AEC1A8A788232A7885DC6 /* Pods-VirtualChipsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualChipsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualChipsTests/Pods-VirtualChipsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F629E65F1FC265BE00597489 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Models/Game.swift; sourceTree = "<group>"; };
+		F629E65F1FC265BE00597489 /* VirtualChips.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = VirtualChips.xcworkspace; path = ../VirtualChips.xcworkspace; sourceTree = "<group>"; };
 		F629E6611FC2660E00597489 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Models/Player.swift; sourceTree = "<group>"; };
 		F630F46A1FBA8C6A00CC0673 /* VirtualChips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualChips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F630F46D1FBA8C6A00CC0673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		F630F48E1FBA8CC100CC0673 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F629E65F1FC265BE00597489 /* Game.swift */,
+				F629E65F1FC265BE00597489 /* VirtualChips.xcworkspace */,
 				F629E6611FC2660E00597489 /* Player.swift */,
 				F6F665E11FC29D4900772F8C /* ServerConnect.swift */,
 			);
@@ -337,7 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		47D2B7947EB247DDE59BBE77 /* [CP] Check Pods Manifest.lock */ = {
@@ -355,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		64588E0A53FCFB487D6D1890 /* [CP] Embed Pods Frameworks */ = {
@@ -413,7 +413,7 @@
 				F6D493DA1FBD7FC70076E59C /* AlignPlayersViewController.swift in Sources */,
 				F6E6FDE31FBAD9C700D7298B /* LoginViewController.swift in Sources */,
 				F6D493DE1FBD802B0076E59C /* EndGameViewController.swift in Sources */,
-				F629E6601FC265BE00597489 /* Game.swift in Sources */,
+				F629E6601FC265BE00597489 /* VirtualChips.xcworkspace in Sources */,
 				F629E6621FC2660E00597489 /* Player.swift in Sources */,
 				F6D493D01FBBB9D60076E59C /* RegisterViewController.swift in Sources */,
 				F6E6FDE51FBAE19900D7298B /* WelcomeViewController.swift in Sources */,
