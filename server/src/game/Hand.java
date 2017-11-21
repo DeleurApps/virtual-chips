@@ -1,4 +1,7 @@
+//Stiven Deleur, Anubhav Garg, Valerie Gomez, David Valdez, Rohan Shastri
 package game;
+
+import java.util.Set;
 
 import server.Response;
 
@@ -6,6 +9,10 @@ public class Hand {
 	private User nextToMove;
 	private Game game;
 	private Pot pot = new Pot();
+	public Pot getPot() {
+		return pot;
+	}
+
 	private int currentBet = 0;
 	private int round = 0;
 	private User lastBetter = null;
@@ -36,8 +43,19 @@ public class Hand {
 		lastBetter = u;
 	}
 	
+	public boolean isRoundOver() {
+		User next = game.userAfter(nextToMove);
+		while (next.isFolded()) {
+			next = game.userAfter(next);
+		}
+		return nextToMove == next;
+	}
+	
+	
 	public void requestMove() {
-		if (lastBetter == nextToMove) {
+		if (isRoundOver()) {
+			finishHand();
+		}else if (lastBetter == nextToMove) {
 			if (round == 3) {
 				finishHand();
 			}else {
@@ -92,6 +110,18 @@ public class Hand {
 	
 	public void finishHand() {
 		System.out.println("Round is over");
+		pot.checkRedeem();
+		if(!pot.isEmpty()) {
+			Set<User> usersInPot = pot.getUsersInPot();
+			Response r = new Response("chooseWinner");
+			r.addParam("numUsers", usersInPot.size());
+			int i = 0;
+			for (User u : usersInPot) {
+				r.addParam(String.valueOf(i), u.getId());
+				i++;
+			}
+			r.send(game.getHost());
+		}
 	}
 	
 	public void goToNextPlayer() {

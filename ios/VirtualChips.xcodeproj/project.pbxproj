@@ -14,11 +14,10 @@
 		F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F46D1FBA8C6A00CC0673 /* AppDelegate.swift */; };
 		F630F4751FBA8C6A00CC0673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F630F4741FBA8C6A00CC0673 /* Assets.xcassets */; };
 		F630F4781FBA8C6A00CC0673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F630F4761FBA8C6A00CC0673 /* LaunchScreen.storyboard */; };
-		F630F4831FBA8C6A00CC0673 /* VirtualChipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */; };
+		F6AE81E11FC3905E00AC0790 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE81E01FC3905E00AC0790 /* ScannerViewController.swift */; };
 		F6D493CE1FBBB89F0076E59C /* GameHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */; };
 		F6D493D01FBBB9D60076E59C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */; };
 		F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D11FBBC8890076E59C /* NewGameViewController.swift */; };
-		F6D493D41FBBC89B0076E59C /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */; };
 		F6D493D61FBBDC870076E59C /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */; };
 		F6D493D81FBD7C150076E59C /* NewGameCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D71FBD7C150076E59C /* NewGameCodeViewController.swift */; };
 		F6D493DA1FBD7FC70076E59C /* AlignPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D91FBD7FC70076E59C /* AlignPlayersViewController.swift */; };
@@ -55,12 +54,10 @@
 		F630F4771FBA8C6A00CC0673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F630F4791FBA8C6A00CC0673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F630F47E1FBA8C6A00CC0673 /* VirtualChipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualChipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualChipsTests.swift; sourceTree = "<group>"; };
-		F630F4841FBA8C6A00CC0673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6AE81E01FC3905E00AC0790 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScannerViewController.swift; path = Controllers/ScannerViewController.swift; sourceTree = "<group>"; };
 		F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameHubViewController.swift; path = Controllers/GameHubViewController.swift; sourceTree = "<group>"; };
 		F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/RegisterViewController.swift; sourceTree = "<group>"; };
 		F6D493D11FBBC8890076E59C /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = Controllers/NewGameViewController.swift; sourceTree = "<group>"; };
-		F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JoinGameViewController.swift; path = Controllers/JoinGameViewController.swift; sourceTree = "<group>"; };
 		F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = Controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		F6D493D71FBD7C150076E59C /* NewGameCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameCodeViewController.swift; path = Controllers/NewGameCodeViewController.swift; sourceTree = "<group>"; };
 		F6D493D91FBD7FC70076E59C /* AlignPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlignPlayersViewController.swift; path = Controllers/AlignPlayersViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				F630F46C1FBA8C6A00CC0673 /* VirtualChips */,
-				F630F4811FBA8C6A00CC0673 /* VirtualChipsTests */,
 				F630F46B1FBA8C6A00CC0673 /* Products */,
 				9DF9AC7C62BEF82FC1ABAF3C /* Pods */,
 				F5188CEF923AACBDDDE55C07 /* Frameworks */,
@@ -146,15 +142,6 @@
 				F630F4791FBA8C6A00CC0673 /* Info.plist */,
 			);
 			path = VirtualChips;
-			sourceTree = "<group>";
-		};
-		F630F4811FBA8C6A00CC0673 /* VirtualChipsTests */ = {
-			isa = PBXGroup;
-			children = (
-				F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */,
-				F630F4841FBA8C6A00CC0673 /* Info.plist */,
-			);
-			path = VirtualChipsTests;
 			sourceTree = "<group>";
 		};
 		F630F48D1FBA8C9500CC0673 /* Plugins */ = {
@@ -189,12 +176,12 @@
 				F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */,
 				F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */,
 				F6D493D11FBBC8890076E59C /* NewGameViewController.swift */,
-				F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */,
 				F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */,
 				F6D493D71FBD7C150076E59C /* NewGameCodeViewController.swift */,
 				F6D493D91FBD7FC70076E59C /* AlignPlayersViewController.swift */,
 				F6D493DB1FBD7FE90076E59C /* InGameViewController.swift */,
 				F6D493DD1FBD802B0076E59C /* EndGameViewController.swift */,
+				F6AE81E01FC3905E00AC0790 /* ScannerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -250,7 +237,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = company;
 				TargetAttributes = {
 					F630F4691FBA8C6A00CC0673 = {
@@ -424,7 +411,7 @@
 				F6D493CE1FBBB89F0076E59C /* GameHubViewController.swift in Sources */,
 				F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */,
 				F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */,
-				F6D493D41FBBC89B0076E59C /* JoinGameViewController.swift in Sources */,
+				F6AE81E11FC3905E00AC0790 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +419,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F630F4831FBA8C6A00CC0673 /* VirtualChipsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +453,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -475,7 +463,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -504,6 +496,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -517,7 +510,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -525,7 +520,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -546,6 +545,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -560,7 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.VirtualChips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -573,7 +573,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.VirtualChips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

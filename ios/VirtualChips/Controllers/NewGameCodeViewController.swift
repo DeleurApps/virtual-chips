@@ -5,17 +5,28 @@
 //  Created by David Valdez on 11/15/17.
 //  Copyright © 2017 company. All rights reserved.
 //
-
+//Stiven Deleur, Anubhav Garg, Valerie Gomez, David Valdez, Rohan Shastri
 import UIKit
 import Starscream
 class NewGameCodeViewController: UIViewController {
 
-    private let NEW_GAME_LOADING_SEGUE = "newGameLoadingSegue"
+    let NEW_GAME_LOADING_SEGUE = "testSegue"
+    
+    var gameID : String?
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var testButton: UIButton!
     
     private let TEST_SEGUE = "testSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let data = (gameID ?? "").data(using: .ascii, allowLossyConversion: false)
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        filter?.setValue(data, forKey: "inputMessage")
+        
+        let img = UIImage(ciImage: (filter?.outputImage)!)
+        
+        imageView.image = img
         // Do any additional setup after loading the view.
     }
 
@@ -24,21 +35,7 @@ class NewGameCodeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    @IBAction func testClicked(_ sender: Any) {
-        performSegue(withIdentifier: TEST_SEGUE, sender: nil)
-    }
     @IBAction func buttonClicked(_ sender: Any) {
-    performSegue(withIdentifier: NEW_GAME_LOADING_SEGUE, sender: nil)
+        performSegue(withIdentifier: NEW_GAME_LOADING_SEGUE, sender: nil)
     }
 }

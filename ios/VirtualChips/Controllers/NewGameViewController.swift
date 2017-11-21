@@ -5,20 +5,28 @@
 //  Created by David Valdez on 11/14/17.
 //  Copyright © 2017 company. All rights reserved.
 //
-
+//Stiven Deleur, Anubhav Garg, Valerie Gomez, David Valdez, Rohan Shastri
 import UIKit
 import Starscream
 class NewGameViewController: UIViewController {
 
-    private let GAME_CODE_SEGUE = "newCodeSegue"
+    let GAME_CODE_SEGUE = "newCodeSegue"
     
     
-    @IBOutlet weak var BuyInSlider: UISlider!
+    @IBOutlet weak var buyInSlider: UISlider!
+    @IBOutlet weak var buyInLabel: UILabel!
     
-    @IBOutlet weak var NumPlayersLabel: UILabel!
-    @IBOutlet weak var BuyInLabel: UILabel!
-    @IBOutlet weak var NumPlayersSlider: UISlider!
-    @IBOutlet weak var sessionNameField: UITextField!
+    @IBOutlet weak var numPlayersSlider: UISlider!
+    @IBOutlet weak var numPlayersLabel: UILabel!
+    
+    @IBOutlet weak var smallBlindSlider: UISlider!
+    @IBOutlet weak var smallBlindLabel: UILabel!
+    
+    @IBOutlet weak var bigBlindSlider: UISlider!
+    @IBOutlet weak var bigBlindLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ServerConnect.socket?.delegate = self
@@ -32,23 +40,30 @@ class NewGameViewController: UIViewController {
     
     
     @IBAction func valueChanged(_ sender: UISlider) {
-        BuyInLabel.text = String(Int(sender.value))
+        sender.setValue(Float(Int(sender.value)), animated: false)
+        if sender == buyInSlider {
+            buyInLabel.text = String(Int(sender.value))
+        }else if sender == numPlayersSlider {
+            numPlayersLabel.text = String(Int(sender.value))
+        }else if sender == smallBlindSlider {
+            smallBlindLabel.text = String(Int(sender.value))
+        }else if sender == bigBlindSlider {
+            bigBlindLabel.text = String(Int(sender.value))
+        }
     }
     
-    @IBAction func playersNumChanged(_ sender: UISlider) {
-        NumPlayersLabel.text = String(Int(sender.value))
-    }
     
-    
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        print("TESTING CLICK")
+        let numPlayers = numPlayersLabel.text ?? "5"
+        let buyIn = buyInLabel.text ?? "100"
+        let smallBlind = smallBlindLabel.text ?? "5"
+        let bigBlind = bigBlindLabel.text ?? "10"
 
-    
-    @IBAction func cancelNewGameClicked(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    @IBAction func createGameClicked(_ sender: Any) {
-        let messageContent = ["numberOfPlayers" : NumPlayersLabel.text, "buyInAmount": BuyInLabel.text,
-                              "sessionName" : sessionNameField.text]
-        let m1 = SendingMessage(command: "startGame", params: messageContent as! [String : String])
+        let messageContent = ["numPlayers" : numPlayers, "buyIn": buyIn
+                              , "smallBlind": smallBlind, "bigBlind": bigBlind]
+        let m1 = SendingMessage(command: "startGame", params: messageContent)
+        print("TESTING CLICK HMMM")
         let jsonEncoder = JSONEncoder()
         do {
             if let jsonData = try? jsonEncoder.encode(m1) {
@@ -68,37 +83,32 @@ class NewGameViewController: UIViewController {
             }
         }
         
-        performSegue(withIdentifier: GAME_CODE_SEGUE, sender: nil)
     }
     
+    
+    @IBAction func cancelNewGameClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == GAME_CODE_SEGUE){
+            let secondViewController = segue.destination as! NewGameCodeViewController
+            secondViewController.gameID = sender as! String?
+            
+        }
+    }
     
 } //CLASS
 extension NewGameViewController : WebSocketDelegate {
     func websocketDidConnect(socket: WebSocketClient) {
-        print("the socket has connected!!")
-        let messageContent = ["username": "hello", "password": "hi"]
-        let message1 = SendingMessage(command: "login", params: messageContent)
-        let jsonEncoder = JSONEncoder()
-        
-        do {
-            if let jsonData = try? jsonEncoder.encode(message1) {
-                if let jsonString = String(data: jsonData, encoding: .utf8){
-                    socket.write(string: jsonString)
-                    print("below is the jsonString")
-                    print(jsonString)
-                    print("has tried to write the data")
-                }
-                else{
-                    print ("encoding failed")
-                }
-            }
-            else {
-                print ("encoding failed")
-                return
-            }
-        }
+    
     }
     
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+    
+    }
+    
+
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         
     }
@@ -115,12 +125,12 @@ extension NewGameViewController : WebSocketDelegate {
         print ("This is the recieved message")
         print (receivedMessage)
         
-    }
-    
-    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        
+        print (receivedMessage.params["id"]!)
+        performSegue(withIdentifier: GAME_CODE_SEGUE, sender: receivedMessage.params["id"] ?? "-1")
         
     }
-    
+
     
 }
 

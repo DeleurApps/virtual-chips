@@ -1,3 +1,4 @@
+//Stiven Deleur, Anubhav Garg, Valerie Gomez, David Valdez, Rohan Shastri
 package game;
 
 import java.util.ArrayList;
@@ -28,6 +29,11 @@ public class Game {
 	
 	public Hand getCurrentHand() {
 		return currentHand;
+	}
+
+
+	public User getHost() {
+		return host;
 	}
 
 
